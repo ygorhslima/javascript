@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background-image: linear-gradient(to right, rgba(18, 196, 202, 0.792), rgba(38, 132, 147, 0.383));
+        }
+        
+        main {
+            background-color: rgba(255, 255, 255, 0.252);
+            padding: 5px 30px 30px 30px;
+            width: 300px;
+            margin: auto;
+            border-radius: 20px;
+            margin-top: 100px;
+            font-size: 15px;
+
+        }
+
+        #botao {
+            background-color: #3498db;
+            color: white;
+            font-size: 16px;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 1px 1px 2px black;
+        }
+
+        .minha-caixa {
+            width: 300px;
+            padding-bottom: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            border-radius: 30px;
+
+        }
+
+        #botao:hover {
+            background-color: rgb(46, 92, 97);
+            transition: 1s;
+        }
+
+        div {
+            text-align: center;
+            padding: 20px;
+        }
+
+        div#resultado {
+            font-size: 20px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+    </style>
+
+    <title>Nacionalidade</title>
+</head>
+<body>
+
+    <main>
+        <h1>formulário teste</h1>
+
+        <form id="meu-formulario">
+            <input type="text" class="minha-caixa" id="nome" placeholder="Nome">
+
+            <br><br>
+
+            <input type="text" class="minha-caixa" id="nacionalidade" placeholder="Nacionalidade">
+
+            <div><input type="button" value="Mostrar Resultado" id="botao"></div>
+        </form>
+
+        <div id="resultado"></div>
+    </main>
+
+    <script>
+
+        const botao = document.getElementById('botao');
+
+        const nomeInput = document.getElementById('nome');
+
+        const nacionalidadeInput = document.getElementById('nacionalidade');
+
+        const resultadoDiv = document.getElementById('resultado');
+
+        botao.addEventListener('click', function(){
+
+            const nome = nomeInput.value;
+            const nacionalidade = nacionalidadeInput.value
+
+            if (nome && nacionalidade) {
+
+                const mensagem = 'o seu nome é ' + nome + ' e a sua nacionalidade é ' + nacionalidade;
+
+                resultadoDiv.textContent = mensagem
+            } else {
+                resultadoDiv.textContent = 'por favor, preencha ambos os campos'
+            }
+
+        })
+    </script>
+</body>
+</html>

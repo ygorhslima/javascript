@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        border: none;
+        padding: 0px;
+        margin: 0px;
+      }
+      .info {
+        display: flex;
+        justify-content: space-between;
+      }
+      .quadrado {
+        position: absolute;
+        display: flex;
+        width: 100px;
+        height: 100px;
+      }
+
+      #q1 {
+        background-color: red;
+        top: 70px;
+        left: 100px;
+      }
+      #q2 {
+        background-color: blue;
+        top: 140px;
+        left: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info" class="info">
+      <p id="posx">posx:</p>
+      <p id="posy">posy:</p>
+      <p id="largura">largura:</p>
+      <p id="altura">altura:</p>
+    </div>
+    <div id="q1" class="quadrado"></div>
+    <div id="q2" class="quadrado"></div>
+    <script src="animacao2.js"></script>
+  </body>
+</html>

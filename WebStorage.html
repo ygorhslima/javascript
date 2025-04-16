@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStorage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" id="nome" required>
+
+        <label for="ano">Data de Nascimento: </label>
+        <input type="date" name="ano" id="ano" required>
+
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" required>
+
+        <button id="btn_texto">adicionar dados</button>
+    </form>
+
+    <script>
+        let f_nome = document.getElementById("nome")
+        let f_ano = document.getElementById("ano")
+        let f_email = document.getElementById("email")
+        const BtnTexto = document.getElementById("btn_texto")
+        
+        BtnTexto.addEventListener("click",(evt)=>{
+            localStorage.setItem("nome",f_nome.value)
+            localStorage.setItem("ano",f_ano.value)
+            localStorage.setItem("email",f_email.value)
+        })
+
+    </script>
+</body>
+</html>

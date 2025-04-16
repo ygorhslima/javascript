@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            border: none;
+            box-sizing: border-box;
+            font-size: large;
+        }
+
+        .caixa {
+            border: 5px solid black;
+            width: 400px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+            padding: 5px;
+            
+        }
+    </style>
+    <title>Arrays coleção MAP</title>
+</head>
+<body>
+    <div id="caixa" class="caixa">        
+    </div>
+    <script>
+        const caixa = document.querySelector("#caixa")
+        let mapa=new Map()
+
+        mapa.set("curso", "JavaScript")
+        mapa.set(10, "CFB Cursos")
+        mapa.set(1, 100)
+        mapa.set("canal", 100)
+        console.log(mapa)
+        caixa.innerHTML = mapa.get("curso")
+        let pes = 10
+        let res = ""
+
+        if (mapa.has("canal")){
+        caixa.innerHTML = "A chave existe na coleção com o valor: " + mapa.get(pes) 
+        } else {
+        caixa.innerHTML = "A chave não está na coleção"
+        }
+        res += "<br> o tamanho da coleção é" + mapa.size
+        caixa.innerHTML = res
+    </script>
+</body>
+</html>

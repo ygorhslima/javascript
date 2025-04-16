@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos DOM</title>
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            background: rgb(42, 139, 42);
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            box-shadow: 1px 1px 1px black;
+            border-radius: 30px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <!--esse método só será aplicado se eu clicar do botão-->
+    <div id="area">
+        <p>clique em mim</p>
+    </div>
+
+    <script>
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        
+        
+        function clicar(){
+            a.innerText = 'clicou'
+            a.style.background = 'red'
+        }
+
+        function entrar(){
+            a.innerText = 'entrou'    
+        }
+
+        function sair(){
+            a.innerText = 'saiu!'
+            a.style.background = 'green'
+        }
+
+
+    </script>
+
+</body>
+</html>

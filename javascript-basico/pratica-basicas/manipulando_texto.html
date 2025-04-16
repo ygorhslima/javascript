@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manipulando textos</title>
+    <style>
+        body {
+            background-color: rgb(16, 186, 192);
+            font: normal 20px "Arial";
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>bem vindo ao site</h1>
+    </main>
+    <script>
+       var nome = window.prompt("Qual é o seu nome? ")
+       document.write("olá " + nome + " seu nome tem " + nome.length + " letras <br>") //quantos carcateres a string tem
+       document.write(" seu nome em maiúscula é " + nome.toUpperCase() + "<br>") //tudo para "MAIÚSCULA"
+       document.write("seu nome em minúsculo é " + nome.toLowerCase() + "<br>") //tudo para "minúscula"
+    </script>
+</body>
+</html>

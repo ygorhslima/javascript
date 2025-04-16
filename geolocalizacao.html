@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            border: none;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <p id="lati"></p>
+    <p id="long"></p>
+    <script>
+        const long = document.getElementById("long")
+        const lati = document.getElementById("lati")
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(mostrarLocalizacao, erroLocalizacao)
+        }else{
+            console.log("geolocalização não suportada")
+        }
+
+        function mostrarLocalizacao(pos){
+            
+            lati.innerHTML=`latitude: ${pos.coords.latitude}`
+            long.innerHTML=`longitude: ${pos.coords.longitude}`
+        }
+
+        function erroLocalizacao(){
+            console.log("erro ao obter a localização")
+        }
+    </script>
+</body>
+</html>

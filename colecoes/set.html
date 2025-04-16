@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            border: none;
+            box-sizing: border-box;
+            font-size: large;
+        }
+
+        .caixa {
+            border: 5px solid black;
+            width: 400px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+            padding: 5px;
+            
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="caixa" class="caixa">        
+    </div>
+    <script>
+                /*
+
+        FUNÇÕES SET
+
+        - add = adiciona
+        - delete = deleta
+        - clear = limpar
+        - entries = entrada
+        - forEach = percorre os elementos
+        - has = caso um elemento estiver lá
+        - keys = verifica as chaves 
+        - values = verifica os valores
+
+        */
+        const caixa = document.querySelector("#caixa")
+        let musicas = new Set(["musica1", "musica boa", "musica10"])
+
+        /*------------O SET ELE NÃO PERMITE ENTRADA DUPLICADA------------*/
+        musicas.add("musica muito legal")
+        musicas.add("musica1")
+        musicas.add("musica10")
+
+
+        console.log(musicas)
+        /*método interno*/
+        musicas.forEach((el)=>{
+            caixa.innerHTML += el + "<br>"
+        })
+        /*método externo*/
+        for (let m of musicas){
+            caixa.innerHTML += m + "<br>"
+        }
+    </script>
+</body>
+</html>

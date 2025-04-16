@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>relacionais de valores</title>
+</head>
+<body>
+    <main>
+        <h1>aqui está o resultado</h1>
+    </main>
+    <script>
+        var n1 = Number(window.prompt("digite um valor qualquer: "))
+        var n2 = Number(window.prompt("digite outro valor qualquer: "))
+        var maior = n1 > n2
+        var menor = n1 < n2
+        var maior_igual = n1 >= n2
+        var menor_igual = n1 <= n2
+        var diferente = n1 != n2
+        var igual = n1 == n2
+        var identico = n1 === n2
+        document.write(n1 + " é maior que " + n2 + "?: " + maior + "<br>")
+        document.write(n1 + " é menor que " + n2 + "?: " + menor + "<br>")
+        document.write(n1 + " é maior igual que " + n2 + "?: " + maior_igual + "<br>") 
+        document.write(n1 + " é menor igual que " + n2 + "?: " + menor_igual + "<br>")
+        document.write(n1 + " é diferente de " + n2 + "?: " + diferente + "<br>")
+        document.write(n1 + "é igual que" + n2 + "?: " + igual + "<br>")
+        document.write(n1 + "é idêntico a" + n2 + "?: " + identico + "<br>")
+
+    </script>
+</body>
+</html>

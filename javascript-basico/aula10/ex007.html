@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>somando numeros</title>
+    <style>
+        body {
+            background-image:linear-gradient(to right, green, aqua);
+        }
+        main {
+            background-color: aquamarine;
+            margin: auto;
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 1px 12px 30px black;
+        }
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            font: bold;
+            font-size: 40px;
+        
+        }
+
+        input {
+            font:normal 18px Arial;
+            width: 100px;
+        }
+
+        div#res{
+           margin-top: 20px;
+           color: rgb(145, 187, 67);
+           font-size: 2em;
+           font-style: italic;
+           font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p>calculadora</p>
+        <input type="number" name="txt1" id="txt1">
+        <input type="number" name="txt2" id="txt2">
+        <input type="button" value="somar" onclick="somar()">
+        <div id="res">resultado</div>
+    </main>
+    <script>
+        function somar(){
+            // criando variáveis em que vai somar os dois valores digitados e mostrar o resultado
+            var tn1 = window.document.getElementById('txt1');
+            var tn2 = window.document.getElementById('txt2');
+            var res = window.document.getElementById('res');
+            // converter a soma de texto para numero, precisa fazer este processo para somar dois valores digitados 
+            var n1 = Number.parseFloat(tn1.value);
+            var n2 = Number.parseFloat(tn2.value);
+
+            var s = n1 + n2
+            var m = n1 * n2
+            var d = n1 / n2
+
+            res.innerText = `
+            a soma entre ${n1} e ${n2} é igual a ${s},  a multiplicação é ${m} e  a divisão é ${d} 
+            `;
+
+        }
+    </script>
+
+</body>
+</html>

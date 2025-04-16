@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testes de javascript</title>
+    <style>
+        body {
+            background-color: aqua;
+            font: normal 20pt "Arial";
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>bem vindo ao site</h1>
+    </main>
+    <script>
+        // soma, substração, divisão, divisão inteira e potenciação no javascript
+        var n1 = Number(parseInt(window.prompt("digite um valor: ")))
+        var n2 = Number(parseInt(window.prompt("difgite outro valor: ")))
+        var s = n1 + n2
+        var sub = n1 - n2
+        var d = n1 / n2
+        var di = n1 % n2
+        var p = n1 ** n2
+
+        document.writeln(`a soma de ${n1} + ${n2} é igual a ${s}<br>`)
+
+        document.writeln(`a subtração de ${n1} - ${n2} é igual a ${sub}<br>`)
+
+        document.writeln(`a divisão de ${n1} / ${n2} é igual a ${d} e o resto da divisão é ${di}<br>`)
+
+        document.writeln(`a potência de ${n1} ** ${n2} é igual a ${p}<br>`)
+
+
+    </script>
+</body>
+</html>

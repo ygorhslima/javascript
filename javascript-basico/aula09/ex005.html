@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>primeiros passos com DOM</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right, aqua, rgb(14, 184, 184));
+        }
+
+        main {
+            background-color: white;
+            width: 70%;    
+            padding: 15px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px ;
+        }
+
+        h1 {
+            color: #ada43c;
+            text-align: center;
+            border-radius: 10px;
+            text-shadow: 1px 1px 1px black;
+        }
+
+        p {
+            text-align: justify;
+            color: rgb(37, 25, 25);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>iniciando estudos com DOM</h1>
+        <p>aqui vai o resultado</p>
+        <p>aprendendo a usar o <strong>DOM</strong> em Javascript</p>
+        <div name="msg">clique em mim</div>
+        <script>
+            var p1 = window.document.getElementsByTagName('p')[1]
+            p1.style.color = 'blue'
+            var corpo = window.document.body
+
+            // esta função modifica a cor do site através do JS, no corpo do site 
+            corpo.style.background = 'green'
+
+            window.document.write('o primeiro paragrafo esta escrito assim: ', p1.innerText)
+            //var d = window.document.getElementById('msg')
+            var d = window.document.getElementsByName('msg')[0]
+            d.innerText = 'olá'
+            d.style.background = 'green'
+            window.alert(p1.innerText)
+
+            var d = window.document.querySelector('div#msg')
+            d.style.background = 'blue'
+            //d.innerText = 'estou aguardando...'
+
+             // escrevendo na tela olá mundo
+             //window.document.write("olá mundo")
+            // mostrando o navegador app que está sendo utilizado
+             //window.document.write(window.navigator.appName)
+            // mostra o charset do site, ex: UTF-8
+            //window.document.write(window.document.charset)
+            // mostra o URl
+            //window.document.write(window.document.URL)
+
+        </script>
+    </main>
+</body>
+</html>

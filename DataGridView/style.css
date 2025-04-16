@@ -1,0 +1,60 @@
+/* Reset básico */
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgb(21, 113, 159), rgb(43, 144, 178));
+}
+
+/* Estilização da tabela */
+.dgv {
+    width: 70%;
+    border-collapse: collapse;
+    margin:20px 0px;
+    font-size: 18px;
+    text-align: left;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.761);
+}
+
+/* Cabeçalho da tabela */
+.dgv_titulos {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(35, 143, 197);
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.dgv_titulos .c1, .dgv_titulos .c2, .dgv_titulos .c3, .dgv_titulos .c4, .dgv_titulos .c5,
+.dgv_dados .c1, .dgv_dados .c2, .dgv_dados .c3, .dgv_dados .c4, .dgv_dados .c5 {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Linhas alternadas */
+.dgv_dados .dgvLinha:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.dgv_dados .dgvLinha:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Efeito hover */
+.dgv_dados .dgvLinha:hover {
+    background-color: #088;
+    color: white;
+}
+.dgvIcone{
+    width: 40px;
+}

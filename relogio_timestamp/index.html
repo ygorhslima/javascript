@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <style>
+        * {
+            border: none;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        
+        div#relogio {
+            position: relative;
+            height: 100vh;
+            background-color: #4a3d3dc5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        div#conteudo {
+            position: relative;
+            height: 200px;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        #timer {
+            background: linear-gradient(135deg, #333, #333333b1);
+            color: #0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 45px;
+            font-weight: light;
+            width: 260px;
+            padding: 20px;
+            border-radius: 30px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), inset 0px 3px 10px rgba(255, 255, 255, 0.1);
+            text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        #botoes {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #444, #222);
+            color: rgba(0, 255, 0, 0.782);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 255, 0, 0.326);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #555, #333);
+            color: #fff;
+            border-color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .parcial{
+            background: #222;
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 10px;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="relogio">
+        <div id="conteudo">
+            <p id="timer">00:00:00</p>
+        </div>
+      
+        <div id="botoes">
+            <button id="btn_iniciar" class="btn">Iniciar</button>
+            <button id="btn_parar" class="btn">Parar</button>
+            <button id="btn_parciais" class="btn">Parciais</button>
+            <button id="btn_zerar" class="btn">Zerar</button>
+        </div>
+
+        <div id="parciais">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
