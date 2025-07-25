@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="c1">HTML</div>
+    <div id="c2">CSS</div>
+    <div id="c3">JavaScript</div>
+    <div id="c4">PHP</div>
+    <div id="c5">React</div>
+    <div id="c6">MySQL</div>
+    
+    <script>
+        const divC1 = document.getElementById("c1")
+        const divC2 = document.getElementById("c2")
+        const divC3 = document.getElementById("c3")
+        const divC4 = document.getElementById("c4")
+        const divC5 = document.getElementById("c5")
+        const divC6 = document.getElementById("c6")
+
+        const arrayElementos = [divC1, divC2, divC3, divC4, divC5, divC6]
+        arrayElementos.map(element=>{
+            element.addEventListener("click",(e)=>{
+                element.innerHTML = "olá"
+                element.style.backgroundColor = "Gray"
+                element.style.color = 'white'
+            })
+        })
+    </script>
+</body>
+</html>
