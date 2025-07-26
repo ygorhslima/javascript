@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .caixa{
+            border: 2px solid black;
+            width: 50%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="caixa" class="caixa"></div>
+    <script>
+        const caixa = document.querySelector("#caixa")
+        let cursos = ["HTML","CSS","JavaScript",['azul', 'vermelho','preto']]
+
+        cursos.push("C++")
+        cursos.push("python")
+        cursos.push("PHP")
+        cursos.pop()
+
+        console.log(cursos[3][0])
+        console.log(cursos[3][1])
+        console.log(cursos[3][2])
+
+        cursos.map((el)=>{
+            let p = document.createElement("p")
+            p.innerHTML = el
+            caixa.appendChild(p)
+        })
+    </script>
+</body>
+</html>

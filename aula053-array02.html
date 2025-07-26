@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="v1">Valor 1</label>
+    <input type="text" id="v1">
+    
+    <label for="v2">Valor 2</label>
+    <input type="text" id="v2">
+    
+    <label for="res">Resultado</label>
+    <input type="text" value="0" id="res" readonly style="cursor:not-allowed">
+    
+    <div class="operacoes">
+        <button id="btn_soma">+</button>
+        <button id="btn_subtracao">-</button>
+        <button id="btn_multiplicacao">*</button>
+        <button id="btn_divisao">/</button>
+    </div>
+    <script>
+        const btn_soma = document.getElementById("btn_soma")
+        const btn_subtracao = document.getElementById("btn_subtracao")
+        const btn_multiplicacao= document.getElementById("btn_multiplicacao")
+        const btn_divisao = document.getElementById("btn_divisao")
+        
+        const txt_v1 = document.getElementById("v1")
+        const txt_v2 = document.getElementById("v2")
+
+        const res = document.querySelector("#res")
+        
+        const valores = [v1,v2]
+        const op = [
+            ()=>{
+                const v1 = Number(txt_v1.value) 
+                const v2 = Number(txt_v2.value)
+                res.value = v1+v2
+            },
+            ()=>{
+                const v1 = Number(txt_v1.value) 
+                const v2 = Number(txt_v2.value)
+                res.value = v1-v2
+            },
+            ()=>{
+                const v1 = Number(txt_v1.value) 
+                const v2 = Number(txt_v2.value)
+                res.value = v1*v2
+            },
+            ()=>{
+                const v1 = Number(txt_v1.value) 
+                const v2 = Number(txt_v2.value)
+                res.value = v1/v2
+            },
+        ]
+        btn_soma.addEventListener("click",()=>{op[0]()})
+        btn_subtracao.addEventListener("click",()=>{op[1]()})
+        btn_multiplicacao.addEventListener("click",()=>{op[2]()})
+        btn_divisao.addEventListener("click",()=>{op[3]()})
+    </script>
+</body>
+</html>
