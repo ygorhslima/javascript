@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 035</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            border: none;
+        }
+        main{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        button{
+            width:150px;
+            height:40px;
+            background-color:#025;
+            color:#fff;
+            cursor:pointer;
+            border-radius:5px;
+        }
+        .curso{
+            display: flex;
+            justify-content: center;
+            width: 200px;
+            border: 4px solid #888;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px 0px;
+            cursor: pointer;
+        }
+        .destaque{
+            background-color: #800 !important;
+            color: #fcc !important;
+            border-color: #f00 !important;
+        }
+        .c1{
+            background-color: #ccc;
+            color: #f00;
+        }
+        .c2{
+            background-color: #444;
+            color: #ccc;
+        }
+        .caixa{
+            border: 4px solid #000;
+            background-color: #eee;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            height: 500px;
+            width: 300px;
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="caixa1" class="caixa">
+            <div id="c1" class="curso c1">HTML</div>
+            <div id="c1" class="curso c1">CSS</div>
+            <div id="c1" class="curso c1">JavaScript</div>
+            <div id="c1" class="curso c1">PHP</div>
+            <div id="c1" class="curso c1">React</div>
+            <div id="c1" class="curso c1">MySQL</div>
+        </div>
+        <button id="btn_transferir"> <- Tranferir -> </button>
+        <div id="caixa2" class="caixa"></div>
+    </main>
+    <script>
+        const caixa1 = document.getElementById("caixa1");
+        const caixa2 = document.getElementById("caixa2");
+        const btn_transferir = document.getElementById("btn_transferir");
+        const todosCursos = [...document.querySelectorAll(".curso")]
+
+        todosCursos.map((elemento)=>{
+            // clique para cada elemento da array TodosCursos
+            elemento.addEventListener('click',(evt)=>{
+                let curso = evt.target
+                curso.classList.toggle("destaque") 
+            })
+        })
+
+        btn_transferir.addEventListener("click",()=>{
+            const cursosSelecionados = [...document.querySelectorAll(".destaque")]
+           
+            cursosSelecionados.map((elemento)=>{
+                if(elemento.parentNode === caixa1){
+                    caixa2.appendChild(elemento)
+                    elemento.classList.remove("destaque")
+                }else if(elemento.parentNode === caixa2){
+                    caixa1.appendChild(elemento)
+                    elemento.classList.remove("destaque")
+                }
+                    
+            })
+        });
+
+    </script>
+</body>
+</html>
