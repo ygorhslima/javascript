@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testes 1</title>
+    <style>
+        .container{
+            display: grid;
+            background-color: lightgray;
+            color: black;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 1fr;
+            width: 40%;
+        }
+        .item{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <label for="dado">Dado: </label>
+    <input type="text" name="dado" id="dado" placeholder="digite um valor para a tabela">
+    <button id="btn_enviar">Clique aqui</button>
+
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <script>
+        const btn_enviar = document.getElementById("btn_enviar");
+        const container = document.querySelector(".container");
+       
+        btn_enviar.addEventListener("click",()=>{
+            const dado = document.querySelector("#dado").value;
+
+            if(dado.trim() !== ""){
+                const novoItem = document.createElement("div")
+                novoItem.setAttribute("class","item")
+                novoItem.textContent = dado
+                container.appendChild(novoItem)
+                document.querySelector("#dado").value = ""
+            }
+        })
+
+    </script>
+</body>
+</html>
