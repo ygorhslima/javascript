@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relação de elementos</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            border: none;
+        }
+        main{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        button{
+            width:150px;
+            height:40px;
+            background-color:#025;
+            color:#fff;
+            cursor:pointer;
+            border-radius:5px;
+        }
+        .curso{
+            display: flex;
+            justify-content: center;
+            width: 200px;
+            border: 4px solid #888;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px 0px;
+            cursor: pointer;
+        }
+        .destaque{
+            background-color: #800 !important;
+            color: #fcc !important;
+            border-color: #f00 !important;
+        }
+        .c1{
+            background-color: #ccc;
+            color: #f00;
+        }
+        .c2{
+            background-color: #444;
+            color: #ccc;
+        }
+        .caixa{
+            border: 4px solid #000;
+            background-color: #eee;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            height: 500px;
+            width: 300px;
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="caixa1" class="caixa">
+            <!--
+                <div id="c1" class="curso c1">HTML</div>
+            -->
+        </div>
+    </main>
+    <script>
+        const caixa1 = document.querySelector("#caixa1");
+        const btn_c1 = document.querySelector(".c1");
+        const c2 = document.getElementById("c2")
+        const cursos = [
+            'HTML','CSS','JAVASCRIPT',
+            'PHP','REACT','MYSQL','REACTNATIVE'
+        ];
+
+        // percorrer a array cursos e para cada item será criado uma div com as classes curso c1 
+        cursos.map((el, chave)=>{
+            const newEl = document.createElement("div")
+            newEl.setAttribute("id",`${"c"+chave}`)
+            newEl.setAttribute("class","curso c1")
+            newEl.innerHTML = el
+            caixa1.appendChild(newEl)
+        })
+        
+    </script>
+</body>
+</html>
