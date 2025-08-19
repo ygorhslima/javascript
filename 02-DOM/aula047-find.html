@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="caixa_array" class="caixa verde">
+        <p>Array: </p>
+        <p id="array"></p>
+    </div>
+    
+    <div id="caixa_pesquisa" class="caixa azul">
+        <label>Pesquisar por</label>
+        <input type="text" name="txt_pesquisar" id="txt_pesquisar">
+        <button id="btnPesquisar">Pesquisar</button>
+    </div>
+
+    <div id="caixa_resultado" class="caixa">
+        <p>Resultado: </p>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        const p_array = document.querySelector("#array")
+        const txt_pesquisar = document.querySelector("#txt_pesquisar")
+        const btn_pesquisar = document.querySelector("#btnPesquisar")
+        const resultado = document.querySelector("#resultado")
+
+        const elementos = [10,20,30,40,34,44,65,11,12,13,14,15,16,17,18]
+        p_array.innerHTML = 
+        btn_pesquisar.addEventListener("click",()=>{
+
+        })
+    </script>
+</body>
+</html>
