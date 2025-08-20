@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .numero{
+            font-size: larger;
+        }
+        .ok{
+            color: blue;
+        }
+        .erro{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="numero" class="numero"></div>
+    <script>
+        const numero = document.getElementById("numero")
+
+        let promessa = new Promise((Resolvido, Rejeitado)=>{
+            let resultado=true
+            let tempo=3000
+
+            setTimeout(()=>{
+                if(resultado){
+                    Resolvido("Deu tudo certo")
+                }else{
+                    Rejeitado("Deu tudo errado")
+                }
+            },tempo)
+
+        })
+
+        promessa.then((retorno)=>{
+            numero.innerHTML = retorno
+            numero.classList.remove("erro")
+            numero.classList.add("ok")
+        })
+        promessa.catch((retorno)=>{
+            numero.innerHTML = retorno
+            numero.classList.add("erro")
+            numero.classList.remove("ok")
+        })
+    </script>
+</body>
+</html>
