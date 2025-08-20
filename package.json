@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "conceitos sobre javascript",
   "main": "aula010-ternario.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
