@@ -7,7 +7,8 @@ function SomarValores(...n){
     return soma
 }
 
-function getTodosOsCursos(){
+/**EXPORT DEFAULT É ÚNICO */
+export default function getTodosOsCursos(){
     return cursos
 }
 
