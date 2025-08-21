@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalização API</title>
+</head>
+<body>
+    <p id="lat"></p>
+    <p id="long"></p>
+    <script>
+        const lat = document.getElementById("lat")
+        const long = document.getElementById("long")
+        
+        const mostrarLocalizacao=(pos)=>{
+            long.innerHTML = pos.coords.longitude
+            lat.innerHTML = pos.coords.latitude
+        }
+       
+        const erroLocalizacao=()=>{
+            console.log("Erro ao obter a localização")
+        }
+       
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(mostrarLocalizacao, erroLocalizacao)
+        }else{
+            alert("geolocalizaçao não suportada")
+        }
+
+      
+    </script>
+</body>
+</html>

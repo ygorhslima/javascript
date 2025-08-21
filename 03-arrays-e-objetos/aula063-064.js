@@ -1,9 +1,14 @@
 const f_tipoMilitar = document.querySelector("#f_tipoMilitar");
 const f_tipoNormal = document.querySelector("#f_tipoNormal");
+const f_nome = document.querySelector("#f_nome")
 const f_blindagem = document.querySelector("#f_blindagem");
 const f_municao = document.querySelector("#f_municao");
+const f_portas = document.querySelector("#f_portas")
+
+const btn_addCarro = document.querySelector("#btn_addCarro")
 const carros = document.querySelector("#carros")
-let c=[]
+
+var a_carros=[]
 
 f_tipoMilitar.addEventListener("click",(evt)=>{
     f_blindagem.removeAttribute("disabled")
@@ -17,77 +22,45 @@ f_tipoNormal.addEventListener("click",(evt)=>{
     f_municao.setAttribute("disabled","disabled")
 })
 
+btn_addCarro.addEventListener("click",()=>{
+    if(f_tipoNormal.checked){
+        const c1 = new Carro(f_nome.value, f_portas.value)
+        a_carros.push(c1)
+    }else{
+        const c2 = new Militar(f_nome.value, f_portas.value, f_portas.value, f_blindagem.value, f_municao.value)
+        a_carros.push(c2)
+    }
+    GerenciarExibicaoCarros()
+})
+
 const GerenciarExibicaoCarros=()=>{
     carros.innerHTML = ""
-    const div=document.createElement("div")
-    div.setAttribute("class","carro")
-    div.innerHTML = ""
+    a_carros.forEach((c)=>{
+        const div = document.createElement("div")
+        div.setAttribute("class","carro")
+        div.innerHTML = `
+            Nome: ${c.nome}<br>
+            Portas: ${c.portas}<br>
+            Blindagem: ${c.blindagem}<br>
+            Munição: ${c.municao} 
+        
+        `
+        carros.appendChild(div)
+    })
 }
 
 class Carro{
-    constructor(nome='', portas=0, cor=''){
+    constructor(nome, portas){
         this.nome = nome;
         this.portas = portas;
-        this.ligado = false;
-        this.vel = 0;
-        this.cor = cor;
-    }
-    
-    ligar = function(){
-        this.ligado = true
-    }
-
-    desligar = function(){
-        this.ligado = false;
-    }
-
-    setPortas=function(portas){
-        this.portas = portas
-    }
-
-    setNome=function(nome){
-        this.nome = nome
-    }
-
-    setCor=function(cor){
-        this.cor=cor 
-    }
-
-    acelerar=function(){
-        this.vel+=10
-    }
-    desacelerar=function(){
-        this.vel-=10
-    }
-
-    info=function(){
-        console.log(`nome do carro: ${this.nome}`)
-        console.log(`quantidade de portas: ${this.portas}`)
-        console.log(`está ligado?: ${this.ligado}`)
-        console.log(`velocidade: ${this.vel}`)
-        console.log(`cor do carro: ${this.cor}`)
     }
 }
 
 class Militar extends Carro{
-    constructor(nome, portas, cor, blindagem, municao){
-        super(nome,portas,cor)
+    constructor(nome, portas, blindagem, municao){
+        super(nome,portas)
         this.blindagem = blindagem
         this.municao = municao
-    }
-    atirar=function(){
-        if(this.municao > 0){
-            console.log(`atirou: ${this.municao--}`);
-        }
-    }
-
-    info=function(){
-        console.log(`nome do carro: ${this.nome}`)
-        console.log(`quantidade de portas: ${this.portas}`)
-        console.log(`está ligado?: ${this.ligado}`)
-        console.log(`velocidade: ${this.vel}`)
-        console.log(`cor do carro: ${this.cor}`)
-        console.log(``)
     }
 }
 
