@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animações</title>
+    <style>
+        *{
+            border: none;
+            padding: 0px;
+            margin: 0px;
+            box-sizing:border-box;
+        }
+        .painel{
+            position: relative;
+            display: flex;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #eee;
+        }
+        button{
+            width: 150px;
+            height: 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            background-color: #ccc;
+        }
+        .carro{
+            background-color: red;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="painel" class="painel">
+        <button id="btn_esquerda">&lt;</button>
+        <button id="btn_direita">&gt;</button>
+        <button id="btn_parar" style="background-color: rgba(232, 20, 20, 0.799); color: white;">Parar</button>
+    </div>
+    <div id="carro" class="carro">
+
+    </div>
+    <script src="animacao2.js"></script>
+</body>
+</html>
