@@ -1,0 +1,22 @@
+const data = new Date()
+
+console.log(data.getDate())
+console.log(data.getDay())
+console.log(data.getFullYear())
+console.log(data.getHours())
+console.log(data.getMilliseconds())
+console.log(data.getMinutes())
+console.log(data.getSeconds())
+console.log(data.getTime())
+console.log(Date.now())
+console.log(data.getTimezoneOffset())
+/* 
+setDate()
+setMonth()
+setFullYear()
+setHours()
+setMinutes()
+setSeconds()
+setMilisseconds()
+toDateString()
+*/
