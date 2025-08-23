@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+}
+
+.dflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc {
+    flex-direction: column;
+    background-color: #7b7575;
+    width: 90%;
+    max-width: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.div_nome {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.div_display {
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+    overflow-x: auto;   /* habilita rolagem horizontal */
+    white-space: nowrap; /* impede quebra de linha */
+    border-radius: 5px;
+    transition: 0.6s;
+}
+
+/* Largura da barra */
+.div_display::-webkit-scrollbar {
+    height: 8px; /* altura da barra horizontal */
+    transition: 0.6s;
+}
+
+/* Trilho (fundo da barra) */
+.div_display::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 10px;
+}
+
+/* Parte que se move */
+.div_display::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Hover na parte que se move */
+.div_display::-webkit-scrollbar-thumb:hover {
+    background: #f44;
+}
+.display {
+    width: 100%;
+    color: white;
+    font-family: monospace;
+    font-size: 1.5rem;
+    text-align: right;
+    border-radius: 5px;
+}
+
+.div_teclas {
+    width: 100%;
+    display: grid;  
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tecla {
+    background-color: #aaa;
+    border: 3px solid #888;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 15px;
+}
+
+.tecla:hover {
+    background-color: rgb(116, 104, 104);
+}
+
+.tecla-de-operacao {
+    background-color: #f44 !important;
+    border-color: #800 !important;
+    color: white;
+}
+
+.tecla-de-operacao:hover {
+    background-color: rgb(148, 13, 13) !important;
+}
