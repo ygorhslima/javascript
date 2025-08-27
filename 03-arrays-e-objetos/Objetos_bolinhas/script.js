@@ -14,13 +14,16 @@ const btn_remover = document.getElementById("btn_remover");
 // variáveis de controle da largura e altura
 let larguraPalco = palco.offsetWidth; // offsetWidth:  retorna a largura total de um elemento HTML em pixels,
 let alturaPalco = palco.offsetWidth;
+// variável que vai contar quantas bolas estão sendo renderizado
+let numBola = 0;
 
 // os objetos bolas que serão criados serão adicionados dentro da array bolas
-let bolas = []
+let bolas = [];
 
 class Bola{
     constructor(arrayBolas, palco){
         this.tamanho=Math.floor(Math.random()*15)+10;
+       
         // cores RGB
         this.r=Math.floor(Math.random()*255);
         this.g=Math.floor(Math.random()*255);
@@ -47,23 +50,49 @@ class Bola{
         this.id = Date.now()+"_"+Math.floor(Math.random()*1000000000000);
 
         // criando o desenho
-        this.desenhar()
+        this.desenhar();
 
         this.controle = setInterval(this.controlar, 10);
         // relacionando a bolinha no dom com o objeto que vou criar
         this.eu=document.getElementById(this.id);
+
+        // contando quantas bolas estão sendo criadas +1 e mostrado no html pelo num_objetos
+        numBola++;
+        num_objetos.innerHTML = numBola;
     }
     // método para desenhar a bolinha no DOM
     desenhar=()=>{
-
+        const div = document.createElement("div")
+        div.setAttribute("id",this.id);
+        div.setAttribute("class","bola");
+        div.setAttribute("style",`
+            left: ${this.posx};
+            top: ${this.posy};
+            width: ${this.tamanho};
+            height:${this.tamanho};
+            background-color: rgb(${this.r}, ${this.g}, ${this.b})
+        `)
+        this.palco.appendChild(div)
     }
     // método para saber a posição da bolinha
     minhaPosicao=()=>{
-
+        return this.arrayBolas.indexOff(this);
     }
     // método para remover a bolinha
     remover=()=>{
-
+        // limpar o intervalo
+        clearInterval(this.controle);
+        // remover do arrayBolas
+        bolas = bolas.filter((bolinha)=>{
+            if(bolinha.id != this.id){
+                return bolinha;
+            }
+        });
+        // remover do DOM
+        this.eu.remove(); // remove a bolinha filho
+        // atualizando o número de bolas
+        numBola--;
+        num_objetos.innerHTML = numBola;
     }
     // método para controlar a movimentação da bolinha, atualizar a posição dela dentro do DOM
     controlar=()=>{
