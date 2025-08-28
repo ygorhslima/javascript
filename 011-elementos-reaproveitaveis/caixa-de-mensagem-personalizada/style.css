@@ -1,0 +1,18 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn_mostrarcxmsg{
+    border: none;
+    padding: 5px;
+    background-color: gray;
+    color: white;
+    border-radius: 30px;
+    transition: 0.6s;
+    cursor: pointer;
+}
+.btn_mostrarcxmsg:hover{
+    opacity: 0.6;
+}
