@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.addEventListener("click", () => {
     Cxmsg.ConfiguracoesBOX("CFB Cursos", "Curso de JavaScript", "#0f0");
   });
+  
   btn2.addEventListener("click",()=>{
     Cxmsg.ConfiguracoesBOX("olá mundo","tudo bem com você ?","#0ff")
   })
