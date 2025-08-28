@@ -1,62 +1,92 @@
-class Cxmsg{
-    titulo=null
-    texto=null
-    constructor(config){
-        this.cor = config.cor;
-        this.body = document.body;
-        this.head = document.head;
-        this.divmsg= document.createElement("div");
-    }
+class Cxmsg {
+  static titulo = "";
+  static texto = "";
+  static cor = "";
+  static divmsg = null;
+
+  static ConfiguracoesBOX(titulo, texto, cor) {
+    Cxmsg.titulo = titulo;
+    Cxmsg.texto = texto;
+    Cxmsg.cor = cor;
+
+    const body = document.body;
+
+    /**AREA DE ESTILOS */
+    const estilo_divmsg = `
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100vh;
+      background-color:rgba(0,0,0,0.7);
+    `;
+
+    const estilo_areaCxmsg = `
+      display:flex;
+      flex-direction:column;
+      width:400px;
+    `;
+
+    const estilo_tituloCxmsg = `
+      background-color:${Cxmsg.cor};
+      color:#fff;
+      padding:10px;
+      border-radius:5px 5px 0 0;
+    `;
+
+    const estilo_corpoCxmsg = `
+      background-color:#eee;
+      padding:20px;
+      color:#000;
+    `;
+
+    const estilo_rodapeCxmsg = `
+      background-color:#ccc;
+      padding:10px;
+      text-align:right;
+      border-radius:0 0 5px 5px;
+    `;
+
+    const estilo_botaoCxmsg = `
+      background-color:${Cxmsg.cor};
+      color:#fff;
+      border:none;
+      padding:10px 20px;
+      cursor:pointer;
+      border-radius:5px;
+    `;
+
+    /**-------------------------------------------------------------------------------------------------------------------------- */
     
-    mostrar=(titulo,texto)=>{
-        this.titulo = titulo;
-        this.texto = texto;
-        // estilo externo
-        const estilo = `<link rel="stylesheet" href="./componentes/cxmsg.css">`;
-        this.head.innerHTML += estilo;
+    Cxmsg.divmsg = document.createElement("div");
+    Cxmsg.divmsg.setAttribute("style", estilo_divmsg);
 
-        // estilos internos
-        const estilo_tituloCxmsg = `
-            display:flex;
-            justify-content:flex-start;
-            align-items:center;
-            width:100%;
-            background-color:${this.cor};
-            color:#fff;
-            padding:10px;
-            border-radius:5px 5px 0px 0px;
-        `;
-        const estilo_botaoCxmsg = `
-            background-color:${this.cor};
-            color:#fff;
-            padding:10px 50px;
-            border-radius:5px;
-            cursor:pointer;
-            text-transform:uppercase;
-        `;
+    Cxmsg.divmsg.innerHTML = `
+      <div style="${estilo_areaCxmsg}">
+        <div style="${estilo_tituloCxmsg}">${Cxmsg.titulo}</div>
+        <div style="${estilo_corpoCxmsg}">${Cxmsg.texto}</div>
+        <div style="${estilo_rodapeCxmsg}">
+          <button id="btn_ok" style="${estilo_botaoCxmsg}">OK</button>
+        </div>
+      </div>
+    `;
 
-        this.divmsg.setAttribute("id","divmsg");
-        this.divmsg.setAttribute("class","estilo_divmsg");
-        this.body.prepend(this.divmsg);
+    body.appendChild(Cxmsg.divmsg);
 
-        // aqui já injetamos todo HTML usando template string
-        this.divmsg.innerHTML = `
-            <div class="estilo_areaCxmsg">
-                <div style="${estilo_tituloCxmsg}">${this.titulo}</div>
-                <div class="estilo_corpoCxmsg">${this.texto}</div>
-                <div class="estilo_rodapeCxmsg">
-                    <button id="btn_ok" style="${estilo_botaoCxmsg}">OK</button>
-                </div>
-            </div>
-        `;
+    Cxmsg.divmsg.querySelector("#btn_ok").addEventListener("click", () => {
+      Cxmsg.ocultar();
+    });
+  }
 
-        // evento do botão
-        this.divmsg.querySelector("#btn_ok").addEventListener("click",()=>{
-            this.ocultar();
-        });
+  static ocultar() {
+    if (Cxmsg.divmsg) {
+      Cxmsg.divmsg.remove();
+      Cxmsg.divmsg = null;
     }
-
-    ocultar=()=>{
-        this.divmsg.remove();
-    }
+  }
 }
+
+export { Cxmsg };
