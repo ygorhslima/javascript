@@ -35,21 +35,21 @@ const dgv=(configdgv)=>{
             ICON_delete.setAttribute("class","fa-solid fa-trash");
             ICON_delete.style.cursor = "pointer"
             ICON_delete.addEventListener("click",()=>{
-                console.log("apagando")
+               DeletarDados()
             })
 
             const ICON_edit = document.createElement("i");
             ICON_edit.setAttribute("class","fa-solid fa-pen");
             ICON_edit.style.cursor = "pointer"
             ICON_edit.addEventListener("click",()=>{
-                console.log("editando")
+                EditarDados()
             })
 
             const ICON_view = document.createElement("i");
             ICON_view.setAttribute("class","fa-solid fa-eye");
             ICON_view.style.cursor = "pointer"
             ICON_view.addEventListener("click",()=>{
-                console.log("visualizando")
+                visualizarDados()
             })
 
             c5.appendChild(ICON_delete);
@@ -65,4 +65,16 @@ const dgv=(configdgv)=>{
         });
     });
 }
+
+function DeletarDados(){
+    console.log("apagando")
+}
+
+function visualizarDados(){
+    console.log("visualizando")
+}
+function EditarDados(){
+    console.log("editando")
+}
+
 dgv(configdgv);
