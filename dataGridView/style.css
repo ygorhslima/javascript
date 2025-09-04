@@ -45,6 +45,10 @@ table.dgv {
 .dgvLinha:nth-child(odd) {
     background-color: #e6e6e6;
 }
+.dgvLinha:hover{
+    background-color: rgba(0, 50, 136, 0.411) !important;
+    color: white !important;
+}
 
 .c1{width: 50px;}
 .c2{width: 50px;}
