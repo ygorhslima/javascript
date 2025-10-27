@@ -4,7 +4,9 @@
     margin: 0px;
     box-sizing: border-box;
 }
-
+body{
+    overflow: hidden;
+}
 .cabecalho{
     display: flex;
     justify-content: center;

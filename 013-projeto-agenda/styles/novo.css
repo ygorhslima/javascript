@@ -1,0 +1,74 @@
+body#novo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.elementosForm{
+    width: 100%;
+    max-width: 420px;
+    padding: 30px 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 1px 6px 18px rgba(0,0,0,0.2);
+}
+form{
+    width: 100%;
+}
+
+.campoForm{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.campoForm label{
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #444;
+}
+.campoForm input{
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.campoForm input:focus{
+    border-color: #00b4b8;
+    box-shadow: 0 0 6px rgba(0,180,226,0.3);
+    outline: none;
+}
+
+.botoesForm{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+.botoesForm button{
+    flex: 1;
+    padding: 10px 0;
+    background-color: #00b4b8;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.botoesForm button:hover{
+    background-color: #0077b6;
+    transform: scale(1.03);
+}
+
+.botoesForm button:nth-child(2):hover{
+    background-color: #620d0d;
+    transform: scale(1.03);
+}
