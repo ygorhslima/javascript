@@ -4,11 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesquisar</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/pesquisar.css">
 </head>
-<body>
-   <h1>Pesquisar</h1>
+<body id="body_pesquisar">
+    <div id="pesquisa">
+        <form method="get">
+            <div class="campoPesq">
+                <label for="f_id">ID</label>
+                <input type="radio" name="f_pesq" id="f_id" value="id">
+            </div>
 
-    <script src="script.js"></script>
+            <div class="campoPesq">
+                <label for="f_nome">nome</label>
+                <input type="radio" name="f_pesq" id="f_nome" value="nome" checked>
+            </div>
+
+            <div class="campoPesq">
+                <label for="f_celular">celular</label>
+                <input type="radio" name="f_pesq" id="f_celular" value="celular">
+            </div>
+            
+            <div class="campoPesq">
+                <label for="f_email">email</label>
+                <input type="radio" name="f_pesq" id="f_email" value="email">
+            </div>
+
+
+            <div class="campoPesq">
+                <label for="f_dtnasc">Data nascimento</label>
+                <input type="radio" name="f_pesq" id="f_dtnasc" value="dtnasc">
+            </div>
+
+            
+            <div class="campoPesq">
+                <label for="f_txtpesq">Pesquisar</label>
+                <input type="text" name="f_txtpesq" id="f_txtpesq" class="input_pesq">
+            </div>
+
+            <div class="campoPesq">
+                <button id="btn_pesq">Pesquisar</button>
+            </div>
+            
+            
+        </form>
+    </div>
+    <script src="scripts/pesquisar.js"></script>
 </body>
 </html>
