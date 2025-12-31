@@ -1,0 +1,131 @@
+/* RESET PADRÃO */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "minecraft";
+    src: url('./assets/minecrafter/Minecrafter.Reg.ttf');
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.divPai{
+    background-image: url("assets/wallpaper4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    overflow-x: hidden; /* Evita barras de rolagem horizontais indesejadas */
+}
+
+/* Limite a divAbelha para não cobrir o site todo */
+.divAbelha {
+    width: 100%;
+    height: 200vh; /* Ela termina no fim da sec2 */
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.abelha {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Configure a div do Steve para a Seção 3 */
+.divSteve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+}
+
+.steve {
+    width: 100%;
+    height: 100%;
+}
+
+
+p {
+    color: white;
+}
+
+h1, h2 {
+    font-family: "minecraft";
+    color: white;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Garante que as seções fiquem organizadas */
+    z-index: 20; /* Coloca o texto acima do fundo, mas cuidado com a abelha */
+}
+
+.mensagem {
+    background-color: rgb(72, 69, 69);
+    padding: 1vw 1.2vw;
+    border: 0.3vw solid black;
+    /* Efeito de borda chanfrada estilo Minecraft/Retro */
+    box-shadow: 3px 3px 0px rgba(255, 255, 255, 0.357) inset, -3px -3px 0px rgba(0,0,0, 0.357);
+}
+
+.sec1 {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.sec1 h1 {
+    font-size: 12vw;
+    width: min-content;
+    -webkit-text-stroke: 0.3vw rgba(0, 0, 0, 0.861); /* Sintaxe simplificada */
+}
+
+.sec2 {
+    align-items: flex-end; /* Use flex-end para maior compatibilidade */
+    gap: 4vw;
+    padding-right: 5vw; /* Margem para o texto não colar na borda */
+}
+
+.sec2 h2 {
+    font-size: 6vw;
+    -webkit-text-stroke: 0.1vw rgba(0, 0, 0, 0.861);
+}
+
+.sec2 h2:nth-child(1) {
+    text-align: end;
+}
+
+.sec3 {
+    font-size: 2vw;
+    gap: 20px;
+}
+
+.sec3 h2 {
+    -webkit-text-stroke: 0.1vw rgba(0, 0, 0, 0.861);
+}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width:767px) {
+    p {
+        font-size: 4vw; /* Aumentei um pouco, 2vw fica muito pequeno no celular */
+    }
+    
+    .sec1 h1 {
+        font-size: 20vw; /* Título maior no mobile */
+    }
+}
